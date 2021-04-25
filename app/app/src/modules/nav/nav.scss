@@ -1,5 +1,46 @@
+.contain {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .navbar {
+
+  &-logo {
+    font-size: 2.2rem;
+  }
+
+  &-book {
+    color: #007bff;
+  }
+
+  &__contain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__tools {
+    width: 50%;
+    max-width: 380px;
+    min-width: 360px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    &-link {
+      font-size: 18px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+        
+      }
+    }
+
     &-search {
       outline: none;
       border-radius: 20px;
