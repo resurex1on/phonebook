@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ListGroup } from 'react-bootstrap';
 import { InputGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import './search.scss';
 
 function FramePhone() {
@@ -90,7 +91,14 @@ function Search() {
       <div className="contain search__contain">
         <h4 className="search-name">Поиск по телефонной книге</h4>
         <div className="search__infoResults">
-          <div className="search__info">{<ChangeFrame/>}</div>
+          <div className="search__info">
+            <div className="search__info__options">
+               <Button className="search__info__options-button" variant="primary">Телефон</Button>{' '}
+               <Button className="search__info__options-button" variant="primary">Адресс</Button>{' '}
+               <Button className="search__info__options-button" variant="primary">Владелец</Button>{' '}
+            </div>
+            {<ChangeFrame/>}
+          </div>
 
           <ListGroup className="search__results">
             <ListGroup.Item className="search__results__result">
