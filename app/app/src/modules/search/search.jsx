@@ -25,6 +25,7 @@ function FramePhone() {
 }
 function FrameAddress() {
   return (
+    <div className="search__info-property">
     <InputGroup className="mb-3">
       <InputGroup.Prepend>
         <InputGroup.Text id="basic-addon1">Адрес</InputGroup.Text>
@@ -36,6 +37,7 @@ function FrameAddress() {
         aria-describedby="basic-addon1"
       />
     </InputGroup>
+    </div>
   );
 }
 function FrameName() {
@@ -61,28 +63,25 @@ function Search() {
 
     function changeToPhone() {
       setState('phone');
-      return FramePhone();
     }
 
     function changeToAddress() {
       setState('address');
-      return FrameAddress();
     }
 
-    function changeToName() {
-      setState('name');
-      return FrameName();
-    }
+    const ChangeToPhone = () => setState('phone');
+    const ChangeToAddress = () => setState('address');
+    const ChangeToName = () => setState('name');
 
     function ChangeFrame() {
       console.log(state)
       switch (state) {
         case 'phone':
-          return changeToPhone();
+          return FramePhone();
         case 'address':
-          return changeToAddress();
+          return FrameAddress();
         case 'name':
-          return changeToName();
+          return FrameName();
       }
     }
 
@@ -93,9 +92,9 @@ function Search() {
         <div className="search__infoResults">
           <div className="search__info">
             <div className="search__info__options">
-               <Button className="search__info__options-button" variant="primary">Телефон</Button>{' '}
-               <Button className="search__info__options-button" variant="primary">Адресс</Button>{' '}
-               <Button className="search__info__options-button" variant="primary">Владелец</Button>{' '}
+               <Button className="search__info__options-button" onClick={ChangeToPhone} variant="primary">Телефон</Button>
+               <Button className="search__info__options-button" onClick={ChangeToAddress} variant="primary">Адрес</Button>
+               <Button className="search__info__options-button" onClick={ChangeToName} variant="primary">Владелец</Button>
             </div>
             {<ChangeFrame/>}
           </div>
