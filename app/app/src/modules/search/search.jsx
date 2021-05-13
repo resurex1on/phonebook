@@ -97,6 +97,7 @@ function Search() {
                <Button className="search__info__options-button" onClick={ChangeToName} variant="primary">Владелец</Button>
             </div>
             {<ChangeFrame/>}
+            <Button className="search__info-start"  variant="primary">Поиск</Button>
           </div>
 
           <ListGroup className="search__results">

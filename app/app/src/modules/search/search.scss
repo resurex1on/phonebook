@@ -32,6 +32,12 @@
     display: flex;
     flex-direction: column;
 
+    &-start {
+      width: 50%;
+      align-self: center;
+      justify-self: center;
+    }
+
     &__options {
       display: flex;
       flex-direction: row;
